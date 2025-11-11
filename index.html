@@ -58,7 +58,12 @@
     footer{padding:30px 0;border-top:1px solid #e6eef2;color:#5b6b7a}
     @media (max-width: 900px){ .hero .wrap{grid-template-columns:1fr} .grid{grid-template-columns:1fr 1fr} .stats{grid-template-columns:1fr 1fr 1fr} nav ul{display:none} .menu{display:inline-flex} }
     @media (max-width: 600px){ .grid{grid-template-columns:1fr} .stats{grid-template-columns:1fr 1fr} }
-  </style>
+  <    /* Hide original nav */
+    header nav, #menuBtn {
+        display: none;
+    }
+
+    /style>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
@@ -79,6 +84,13 @@
       </div>
     </div>
   </header>
+
+    <nav style="background-color:#0866E6; padding:1rem; text-align:center;">
+  <a href="index.html" style="color:white; margin-right:1rem; text-decoration:none;">Home</a>
+  <a href="about.html" style="color:white; margin-right:1rem; text-decoration:none;">About</a>
+  <a href="programs.html" style="color:white; margin-right:1rem; text-decoration:none;">Programs</a>
+  <a href="contact.html" style="color:white; text-decoration:none;">Contact</a>
+</nav>
 
   <main id="main">
     <!-- Hero / Mission -->
