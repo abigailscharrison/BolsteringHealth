@@ -1,29 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Bolstering Health</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About • Bolstering Health</title>
+  <meta name="description" content="Learn about Bolstering Health’s mission, values, and commitment to strengthening North Carolina communities." />
+  <meta name="theme-color" content="#0B6E6E" />
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header { background-color: #0866e6; padding: 1rem; color: white; }
-    nav a { color: white; margin-right: 1rem; text-decoration: none; }
-    nav a:hover { text-decoration: underline; }
-    main { padding: 1rem; }
+    :root{ --bg:#f7fbfc; --ink:#0f1b2a; --muted:#5b6b7a; --surface:#ffffff; --brand:#0B6E6E; --accent:#2f6fed; --radius:14px; --shadow:0 10px 30px rgba(15,27,42,.08); --maxw:1100px; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:var(--maxw);margin-inline:auto;padding:clamp(16px,2vw,24px)}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.9);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid #e6eef2;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink)}
+    .brand-badge{width:34px;height:34px;border-radius:10px;background:conic-gradient(from 200deg at 50% 50%, #0B6E6E, #2f6fed 60%, #0B6E6E)}
+
+    /* Blue nav bar */
+    .topnav{
+      background-color:#0866E6;
+      padding:1rem;
+      text-align:center;
+    }
+    .topnav a{
+      color:white;
+      margin-right:1rem;
+      font-weight:600;
+      text-decoration:none;
+    }
+    .topnav a:hover{
+      text-decoration:underline;
+    }
+
+    /* Page Layout */
+    main{padding:40px 0}
+    h1{font-size:clamp(28px,4vw,42px);margin-bottom:10px}
+    p.sub{color:var(--muted);max-width:70ch;margin-bottom:24px;font-size:18px}
+
+    section{background:var(--surface);padding:30px;border-radius:16px;box-shadow:var(--shadow);margin-bottom:28px}
   </style>
 </head>
+
 <body>
-<header>
-  <nav>
+
+  <!-- Sticky Header -->
+  <header>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+      <div class="brand">
+        <span class="brand-badge"></span>
+        <span>Bolstering Health</span>
+      </div>
+      <div style="display:flex;gap:10px">
+        <a class="btn btn-secondary" href="index.html#apply" style="padding:10px 14px;border-radius:10px;background:#eef5f8;color:var(--ink);font-weight:700;text-decoration:none;border:1px solid #d8e7ee">Apply</a>
+        <a class="btn btn-primary" href="index.html#donate" style="padding:10px 14px;border-radius:10px;background:var(--brand);color:white;font-weight:700;text-decoration:none">Donate</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Blue Navigation Bar -->
+  <nav class="topnav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="programs.html">Programs</a>
     <a href="contact.html">Contact</a>
   </nav>
-</header>
-<main>
-  <h1>About Bolstering Health</h1>
-  <p>Bolstering Health is dedicated to providing holistic services to support North Carolinians in need of housing, recovery, appointments, financial literacy, child supports, and healthy living. We strengthen communities by pairing care with capability — connecting people to housing, recovery, mental health support, healthy living, and financial literacy, then staying with them until stability sticks.</p>
-</main>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="container">
+
+      <section>
+        <h1>About Bolstering Health</h1>
+        <p class="sub">
+          Bolstering Health strengthens North Carolina communities by pairing care with capability — connecting people to housing, recovery, mental health support, healthy living, and financial literacy, then staying with them until stability sticks.
+        </p>
+
+        <p>
+          Our mission is rooted in the belief that people thrive when they have stability, education, and support. We focus on long-term sustainability by helping individuals and families develop the skills, habits, and connections needed for lasting independence.
+        </p>
+
+        <p>
+          Working alongside partners including <strong>The Carter Clinic, PA</strong> and <strong>B&D Integrated Health Systems</strong>, we help clients access critical mental health care, counseling, primary care, substance use recovery services, and wraparound supports.
+        </p>
+
+        <p>
+          From housing stability and workforce development to financial literacy and children's educational support, Bolstering Health is committed to restoring family units and breaking cycles of instability across underserved communities in North Carolina.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
 </body>
 </html>
