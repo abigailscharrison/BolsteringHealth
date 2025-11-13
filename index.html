@@ -6,334 +6,338 @@
   <title>Bolstering Health • North Carolina Nonprofit</title>
   <meta name="description" content="Bolstering Health connects North Carolinians with housing, recovery, appointments, financial literacy, child supports, and healthy living." />
   <meta name="theme-color" content="#0B6E6E" />
+
   <style>
-    :root{ --bg:#f7fbfc; --ink:#0f1b2a; --muted:#5b6b7a; --surface:#ffffff; --brand:#0B6E6E; --accent:#2f6fed; --ok:#0d7b3e; --radius:14px; --shadow:0 10px 30px rgba(15,27,42,.08); --maxw:1100px; }
+    :root{
+      --bg:#f7fbfc;
+      --ink:#0f1b2a;
+      --muted:#5b6b7a;
+      --surface:#ffffff;
+      --brand:#0B6E6E;
+      --accent:#2f6fed;
+      --radius:14px;
+      --shadow:0 10px 30px rgba(15,27,42,.08);
+      --maxw:1100px;
+    }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.6;
+    }
+
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
-    .container{max-width:var(--maxw);margin-inline:auto;padding:clamp(16px,2vw,24px)}
+
+    .container{
+      max-width:var(--maxw);
+      margin-inline:auto;
+      padding:clamp(16px,2vw,24px);
+    }
 
     /* Header */
-    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip-link:focus{position:fixed;left:16px;top:16px;width:auto;height:auto;background:#fff;padding:10px 14px;border-radius:8px;z-index:1000;box-shadow:var(--shadow)}
-    header{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.9);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid #e6eef2}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink);letter-spacing:.2px}
-    .brand-badge{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 200deg at 50% 50%, #0B6E6E, #2f6fed 60%, #0B6E6E);box-shadow:var(--shadow)}
-    nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0}
-    nav a{color:var(--ink);opacity:.85;font-weight:600;padding:10px 8px;border-radius:10px}
-    nav a:hover, nav a:focus{background:#eef5f8;opacity:1}
-    .cta-row{display:flex;gap:10px;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer;text-decoration:none}
-    .btn-primary{background:var(--brand);color:#fff}
-    .btn-primary:hover{filter:brightness(.95)}
-    .btn-secondary{background:#eef5f8;color:var(--ink);border-color:#d8e7ee}
-    .btn-secondary:hover{background:#e6f1f6}
-    .menu{display:none}
+    header{
+      position:sticky;
+      top:0;
+      z-index:999;
+      background:rgba(255,255,255,.9);
+      backdrop-filter:saturate(1.2) blur(8px);
+      border-bottom:1px solid #e6eef2;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      color:var(--ink);
+    }
+    .brand-badge{
+      width:34px;
+      height:34px;
+      border-radius:10px;
+      background:conic-gradient(from 200deg at 50% 50%, #0B6E6E, #2f6fed 60%, #0B6E6E);
+    }
 
-    /* Hide original nav inside header (we'll use the blue bar instead) */
-    header nav, #menuBtn, #navlinks {
-      display: none;
+    /* Blue nav bar */
+    .topnav{
+      background-color:#0866E6;
+      padding:1rem;
+      text-align:center;
+    }
+    .topnav a{
+      color:white;
+      margin-right:1rem;
+      font-weight:600;
+      text-decoration:none;
+    }
+    .topnav a:last-child{
+      margin-right:0;
+    }
+    .topnav a:hover{
+      text-decoration:underline;
     }
 
     /* Hero */
-    .hero{padding:56px 0 24px;background:radial-gradient(1200px 600px at 80% -20%, #ebf6f8, transparent 60%), linear-gradient(#ffffff, #f5fafb)}
-    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
-    .kicker{font-weight:800;color:var(--brand);letter-spacing:.3px}
-    h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:10px 0 8px}
-    .lede{font-size:clamp(16px,2.2vw,18px);color:var(--muted);max-width:60ch}
-    .hero-ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
-    .stat{background:var(--surface);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
-    .stat b{font-size:20px}
-    .hero-card{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);padding:20px}
+    main{padding:40px 0}
+    .hero{
+      background:radial-gradient(1200px 600px at 80% -20%, #ebf6f8, transparent 60%), linear-gradient(#ffffff, #f5fafb);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:32px 24px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:24px;
+      align-items:center;
+    }
+    @media (max-width: 800px){
+      .hero{grid-template-columns:1fr}
+    }
+    .kicker{
+      font-weight:800;
+      color:var(--brand);
+      letter-spacing:.3px;
+      text-transform:uppercase;
+      font-size:13px;
+    }
+    h1{
+      font-size:clamp(28px,4vw,44px);
+      line-height:1.15;
+      margin:10px 0 8px;
+    }
+    .lede{
+      font-size:clamp(16px,2.2vw,18px);
+      color:var(--muted);
+      max-width:60ch;
+      margin-bottom:18px;
+    }
+    .hero-ctas{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:8px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border-radius:12px;
+      padding:10px 14px;
+      font-weight:700;
+      cursor:pointer;
+      text-decoration:none;
+      border:1px solid transparent;
+    }
+    .btn-primary{
+      background:var(--brand);
+      color:#fff;
+    }
+    .btn-primary:hover{filter:brightness(.95)}
+    .btn-secondary{
+      background:#eef5f8;
+      color:var(--ink);
+      border-color:#d8e7ee;
+    }
+    .btn-secondary:hover{background:#e6f1f6}
 
-    /* Sections */
-    section{padding:48px 0}
-    h2{font-size:clamp(22px,3vw,30px);line-height:1.2;margin:0 0 10px}
-    .sub{color:var(--muted);max-width:70ch;margin-bottom:18px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .card{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);padding:18px}
-    .card h3{margin-top:0;margin-bottom:6px;font-size:18px}
-    .badge{display:inline-block;background:#e7f4f4;color:#0B6E6E;font-weight:700;border-radius:999px;padding:4px 10px;font-size:12px;margin-bottom:6px}
-    .list{margin:0;padding-left:18px}
-    .two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    footer{padding:30px 0;border-top:1px solid #e6eef2;color:#5b6b7a}
+    .hero-card{
+      background:var(--surface);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      padding:20px;
+    }
+    .hero-card h2{
+      margin-top:0;
+      font-size:20px;
+    }
+    .hero-card p{margin-top:6px}
+
+    /* Home programs teaser */
+    .home-section{
+      margin-top:32px;
+    }
+    .home-section h2{
+      font-size:clamp(22px,3vw,30px);
+      margin-bottom:8px;
+    }
+    .sub{
+      color:var(--muted);
+      max-width:70ch;
+      margin-bottom:18px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
     @media (max-width: 900px){
-      .hero .wrap{grid-template-columns:1fr}
       .grid{grid-template-columns:1fr 1fr}
-      .stats{grid-template-columns:1fr 1fr 1fr}
-      nav ul{display:none}
-      .menu{display:inline-flex}
     }
     @media (max-width: 600px){
       .grid{grid-template-columns:1fr}
-      .stats{grid-template-columns:1fr 1fr}
+    }
+    .card{
+      background:var(--surface);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+    .card h3{
+      margin-top:0;
+      margin-bottom:6px;
+      font-size:18px;
+    }
+    .badge{
+      display:inline-block;
+      background:#e7f4f4;
+      color:#0B6E6E;
+      font-weight:700;
+      border-radius:999px;
+      padding:4px 10px;
+      font-size:12px;
+      margin-bottom:6px;
+    }
+
+    footer{
+      padding:24px 0 16px;
+      color:#5b6b7a;
+      font-size:13px;
     }
   </style>
 </head>
-<body>
-  <a href="#main" class="skip-link">Skip to content</a>
 
+<body>
+  <!-- Sticky Header -->
   <header>
-    <div class="container nav" role="navigation" aria-label="Primary">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
       <div class="brand">
-        <span class="brand-badge" aria-hidden="true"></span>
+        <span class="brand-badge"></span>
         <span>Bolstering Health</span>
       </div>
-      <button class="btn btn-secondary menu" aria-expanded="false" aria-controls="navlinks" id="menuBtn">
-        Menu
-      </button>
-      <nav>
-        <ul id="navlinks">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="programs.html">Programs</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="cta-row">
+      <div style="display:flex;gap:10px">
         <a class="btn btn-secondary" href="#apply">Apply</a>
         <a class="btn btn-primary" href="#donate">Donate</a>
       </div>
     </div>
   </header>
 
-  <!-- Simple blue navigation bar for all pages -->
-  <nav style="background-color:#0866E6; padding:1rem; text-align:center;">
-    <a href="index.html" style="color:white; margin-right:1rem; text-decoration:none;">Home</a>
-    <a href="about.html" style="color:white; margin-right:1rem; text-decoration:none;">About</a>
-    <a href="programs.html" style="color:white; margin-right:1rem; text-decoration:none;">Programs</a>
-    <a href="contact.html" style="color:white; text-decoration:none;">Contact</a>
+  <!-- Blue Navigation Bar -->
+  <nav class="topnav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <main id="main">
-    <!-- Hero / Mission -->
-    <section class="hero" id="mission">
-      <div class="container wrap">
+  <main>
+    <div class="container">
+
+      <!-- HERO / MISSION (HOME CONTENT ONLY) -->
+      <section class="hero" id="mission">
         <div>
           <div class="kicker">North Carolina Nonprofit</div>
           <h1>Connecting North Carolinians with the care and resources they need to thrive.</h1>
-          <p class="lede"><strong>Bolstering Health</strong> is dedicated to providing holistic services to members of the community, in an effort to restore families that have been damaged through substance abuse or untreated mental health disorders. True wellness comes from stability, education, and the ability to sustain yourself. We pair care with teaching, mentoring, and accountability so people build long-term sustainability and everyday stability — including staying consistent with their appointments.</p>
+          <p class="lede">
+            Bolstering Health strengthens families and communities by pairing care with capability — connecting people to housing, recovery, mental health support, healthy living, and financial literacy, then staying with them until stability sticks.
+          </p>
           <div class="hero-ctas">
             <a class="btn btn-primary" href="#apply">Apply / Interest Form</a>
-            <a class="btn btn-secondary" href="#programs">Explore Programs</a>
-          </div>
-          <div class="stats" aria-label="Key facts">
-            <div class="stat"><b>28%</b><br><small>NC households are housing cost-burdened</small></div>
-            <div class="stat"><b>6×</b><br><small>Housing-insecure adults more likely to delay care</small></div>
-            <div class="stat"><b>$150B</b><br><small>Annual U.S. cost of missed appointments</small></div>
+            <a class="btn btn-secondary" href="programs.html">Explore Programs</a>
           </div>
         </div>
         <div class="hero-card" aria-label="Mission snapshot">
-          <h2 style="margin-top:0">Mission Snapshot</h2>
-          <p class="sub"><strong>We strengthen communities by pairing care with capability — connecting people to housing, recovery, mental health support, healthy living, and financial literacy, then staying with them until stability sticks.</strong></p>
-          <h3 style="color:#0B6E6E;margin-top:12px">Our Approach</h3>
-          <p>Meet people where they are. Remove barriers. Follow through. We blend warm outreach with practical coordination so care is accessible, consistent, and sustainable.</p>
-          <div class="card" style="margin-top:12px">
-            <h3 style="margin:0">Family Restoration Focus</h3>
-            <p style="margin:.4rem 0 0">We provide holistic, community-based services that help restore families impacted by substance use or untreated mental health disorders. In partnership with <strong>The Carter Clinic, PA</strong>, we connect clients to counseling, medication management, primary care, and peer support — promoting healing and helping restore the family unit across underserved North Carolina communities.</p>
-          </div>
+          <h2>Our Approach</h2>
+          <p class="sub" style="margin-bottom:10px;">
+            Meet people where they are. Remove barriers. Follow through.
+          </p>
+          <p>
+            We blend warm outreach with practical coordination — helping clients keep appointments, navigate systems, and build the skills they need for long-term independence.
+          </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Programs Overview -->
-    <section id="programs">
-      <div class="container">
-        <h2>Our Five Core Programs</h2>
-        <p class="sub">Five pillars work together to move people from crisis to independence.</p>
-        <div class="grid" role="list">
-          <article class="card" role="listitem">
+      <!-- SHORT PROGRAMS TEASER (not full details) -->
+      <section class="home-section">
+        <h2>What We Focus On</h2>
+        <p class="sub">
+          Our work is organized into five core programs. Visit the Programs page to see details, eligibility, and examples of services.
+        </p>
+
+        <div class="grid">
+          <article class="card">
             <span class="badge">Housing as Health</span>
-            <h3>Stable housing as a foundation for wellness</h3>
-            <p>Bridge to Independence (foster youth), Stability After Incarceration (reentry), and Families & Individuals in Need — paired with education and coaching to sustain housing.</p>
-            <p><a href="#housing">Learn more →</a></p>
+            <h3>Stable housing as a foundation</h3>
+            <p>Transitional housing and supports for foster youth, returning citizens, and families facing housing instability.</p>
+            <p><a href="programs.html#housing">Learn more →</a></p>
           </article>
-          <article class="card" role="listitem">
-            <span class="badge">Substance Abuse & Mental Health</span>
-            <h3>Care continuity & engagement</h3>
-            <p>Proactive outreach, weekly check-ins, peer support, and appointment coordination so people stay engaged in recovery and mental health care.</p>
-            <p><a href="#engagement">Learn more →</a></p>
+
+          <article class="card">
+            <span class="badge">Substance Abuse &amp; Mental Health</span>
+            <h3>Care continuity &amp; engagement</h3>
+            <p>Outreach, appointment support, and between-visit check-ins so people stay connected to treatment.</p>
+            <p><a href="programs.html#engagement">Learn more →</a></p>
           </article>
-          <article class="card" role="listitem">
-            <span class="badge">Steward & Seed</span>
-            <h3>Financial success & investing mindset</h3>
-            <p>Financial literacy, behavioral wellness, and workforce skills. <strong>Every choice is an investment</strong> toward financial freedom and a thriving life that breaks cycles of poverty and debt.</p>
-            <p><a href="#steward">Learn more →</a></p>
+
+          <article class="card">
+            <span class="badge">Steward &amp; Seed</span>
+            <h3>Financial success &amp; investing mindset</h3>
+            <p>Financial literacy, behavior change, and workforce readiness with a focus on long-term stability.</p>
+            <p><a href="programs.html#steward">Learn more →</a></p>
           </article>
-          <article class="card" role="listitem">
+
+          <article class="card">
             <span class="badge">Children’s Program</span>
-            <h3>Academic, behavioral, and mentorship supports</h3>
-            <p>For children who may be behind in school due to unstable housing, disrupted routines, or unmet needs related to a parent’s substance use or untreated mental health conditions. We provide consistent educational, emotional, and developmental support so kids can thrive.</p>
-            <p><a href="#children">Learn more →</a></p>
+            <h3>Support for kids impacted by instability</h3>
+            <p>Educational, behavioral, and mentorship supports for children who may be behind in school.</p>
+            <p><a href="programs.html#children">Learn more →</a></p>
           </article>
-          <article class="card" role="listitem">
-            <span class="badge">Community Health & Wellness</span>
+
+          <article class="card">
+            <span class="badge">Community Health &amp; Wellness</span>
             <h3>Healthy habits for life</h3>
-            <p>Nutrition education, movement, prevention, sexual health, substance awareness, and tracking key health metrics (BMI, BP, A1C, lipids).</p>
-            <p><a href="#community">Learn more →</a></p>
+            <p>Nutrition, movement, prevention, and health tracking to help people understand and care for their bodies.</p>
+            <p><a href="programs.html#community">Learn more →</a></p>
           </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Housing -->
-    <section id="housing">
-      <div class="container">
-        <h2>Housing as Health</h2>
-        <p class="sub">Housing is healthcare. We secure housing and teach the systems to sustain it.</p>
-        <div class="two">
-          <article class="card">
-            <span class="badge">Bridge to Independence (18–24)</span>
-            <h3>For youth aging out of foster care</h3>
-            <p>Transitional housing with step-down supports, paid apprenticeships, coaching, and mental health linkage.</p>
-          </article>
-          <article class="card">
-            <span class="badge">Stability After Incarceration</span>
-            <h3>For returning citizens</h3>
-            <p>Rapid safe housing, paid transitional work, skills training, and ongoing case management.</p>
-          </article>
-        </div>
-        <div class="card" style="margin-top:16px">
-          <span class="badge">Families & Individuals in Need</span>
-          <h3>For households facing housing instability</h3>
-          <p>Placement and stabilization with budgeting, benefits navigation, and linkages to <em>Steward & Seed</em> and <em>Community Health & Wellness</em>.</p>
-        </div>
-        <div class="card" style="margin-top:20px;background:#e7f4f4">
-          <h3>National Affordable Housing Gap</h3>
-          <p>A new report by the <strong>National Low Income Housing Coalition (NLIHC)</strong> finds a national shortage of <strong>7.1 million affordable and available rental homes</strong> for extremely low-income renter households — those earning at or below the poverty line or 30% of their area median income. This means there are only <strong>35 affordable homes for every 100</strong> extremely low-income renters nationwide. <em>The Gap: A Shortage of Affordable Homes</em> is released annually and analyzes affordability and availability across every state and major metro area.</p>
-        </div>
-      </div>
-    </section>
+      <!-- SIMPLE APPLY / DONATE ANCHORS (teasers) -->
+      <section class="home-section" id="apply">
+        <h2>Apply / Share Interest</h2>
+        <p class="sub">
+          Ready to learn more or see if you qualify for services? Start by sharing your contact information and the area you’re interested in.
+        </p>
+        <p>
+          For now, you can adapt your own intake form or link to a secure external form here when you’re ready.
+        </p>
+      </section>
 
-    <!-- Engagement -->
-    <section id="engagement">
-      <div class="container">
-        <h2>Substance Abuse & Mental Health Engagement</h2>
-        <p class="sub">We reinforce clinical treatment with consistency, connection, and accountability.</p>
-        <div class="grid">
-          <div class="card"><h3>Appointment Outreach & Retention</h3><p>Personal calls, texts, and community check-ins for missed visits; rescheduling and transportation problem-solving.</p></div>
-          <div class="card"><h3>Between-Visit Engagement</h3><p>Weekly peer groups or virtual check-ins to sustain motivation and reduce isolation.</p></div>
-          <div class="card"><h3>Relapse & Crisis Prevention</h3><p>A dedicated support contact participants can reach when they’re struggling.</p></div>
-          <div class="card"><h3>Partner Clinics</h3><p>Warm coordination with <strong>The Carter Clinic, PA</strong> and <strong>B&D Integrated Health Systems</strong> for psychiatric, therapy, and MAT care.</p></div>
-        </div>
-        <div class="card" style="margin-top:16px">
-          <h3>Our Team & Approach</h3>
-          <p>Bolstering Health’s care management team has years of experience with substance-using populations. We inspire clients to engage in treatment or recommit after setbacks, using last-known contacts and verified databases to re-connect, educate, and collaboratively solve barriers that prevent care.</p>
-          <p>We recognize that most people who disengage have relapsed and face elevated risks — overdose, re-imprisonment, and other harms of chronic substance dependence. We intervene early with compassionate accountability and consistent follow-up.</p>
-        </div>
-      </div>
-    </section>
+      <section class="home-section" id="donate">
+        <h2>Support Bolstering Health</h2>
+        <p class="sub">
+          As Bolstering Health grows, this section can link to a secure donation page to support housing, recovery, and community programs.
+        </p>
+        <p>
+          Replace this placeholder with your real donation link when you’re ready to accept contributions.
+        </p>
+      </section>
 
-    <!-- Steward & Seed -->
-    <section id="steward">
-      <div class="container">
-        <h2>Steward & Seed (Financial Success)</h2>
-        <p class="sub">Financial literacy + behavior + professionalism — with an <strong>investing mindset</strong>: every purchase and decision should be an investment toward financial freedom and a thriving life.</p>
-        <div class="grid">
-          <div class="card"><h3>Financial Literacy & Empowerment</h3><p>Budgeting, saving, credit management, and planning — applied to real life.</p></div>
-          <div class="card"><h3>Behavioral Health & Wellness</h3><p>Emotional regulation, delayed gratification, and habits that support smart money choices.</p></div>
-          <div class="card"><h3>Workforce Development & Reentry</h3><p>Professionalism, communication, and consistency for job readiness and advancement.</p></div>
-        </div>
-        <div class="card" style="margin-top:16px">
-          <h3>Program Phases</h3>
-          <ol class="list">
-            <li><strong>Understanding the System</strong> — Foundations: budgeting, saving, credit, psychology of money.</li>
-            <li><strong>Building Financial Systems</strong> — Budgets, goals, planning, and investing basics.</li>
-            <li><strong>Professionalism & Communication</strong> — Self-presentation and advocacy for workplace success.</li>
-            <li><strong>Growth & Accountability</strong> — Ongoing check-ins, progress logs, and habit tracking.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- Children -->
-    <section id="children">
-      <div class="container">
-        <h2>Children’s Program</h2>
-        <p class="sub">Dedicated supports for children who may have fallen behind in school due to unstable housing, disrupted routines, or unmet needs related to a parent’s substance use or untreated mental health conditions. We ensure consistent educational, emotional, and developmental support so children can catch up and thrive.</p>
-        <div class="grid">
-          <div class="card"><h3>Educational Support</h3><p>Tutoring, literacy intervention, and homework help to close gaps.</p></div>
-          <div class="card"><h3>Behavioral & Mental Health Screenings</h3><p>Early identification and referrals to child specialists.</p></div>
-          <div class="card"><h3>Mentorship & Exposure</h3><p>Career panels, shadowing, pre-college and summer enrichment.</p></div>
-          <div class="card"><h3>Life Skills & Financial Literacy</h3><p>Age-appropriate money habits, communication, and responsibility.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Community Health -->
-    <section id="community">
-      <div class="container">
-        <h2>Community Health & Wellness</h2>
-        <p class="sub">Teach, track, and practice healthy living: food, movement, prevention, and accurate health information.</p>
-        <div class="grid">
-          <div class="card"><h3>Nutrition & Healthy Eating</h3><p>Affordable meal planning, label reading, and links between diet, diabetes, and heart health.</p></div>
-          <div class="card"><h3>Exercise & Movement</h3><p>Sustainable routines — walking groups, stretching, strength, and mind-body practices.</p></div>
-          <div class="card"><h3>Preventive Care & Milestones</h3><p>Understanding vaccines, dental care, and recommended screenings by age.</p></div>
-          <div class="card"><h3>Sexual Health Education</h3><p>Contraception, STD prevention, and informed choices to protect future goals.</p></div>
-          <div class="card"><h3>Substance Use Awareness</h3><p>Risks of tobacco, alcohol, and drugs explained clearly and compassionately.</p></div>
-          <div class="card"><h3>Health Tracking</h3><p>Monitoring BMI, blood pressure, A1C, and cholesterol — teaching what the numbers mean.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Apply / Contact -->
-    <section id="apply">
-      <div class="container">
-        <h2>Apply / Interest</h2>
-        <p class="sub">Select a track and we’ll follow up. (Replace these with your real intake links.)</p>
-        <div class="grid">
-          <div class="card"><h3>Housing as Health</h3><p><a class="btn btn-primary" href="#">Start Housing Interest</a></p></div>
-          <div class="card"><h3>Substance Abuse & Mental Health</h3><p><a class="btn btn-primary" href="#">Start Engagement Interest</a></p></div>
-          <div class="card"><h3>Steward & Seed</h3><p><a class="btn btn-primary" href="#">Enroll in Steward & Seed</a></p></div>
-          <div class="card"><h3>Children’s Program</h3><p><a class="btn btn-primary" href="#">Request Support</a></p></div>
-          <div class="card"><h3>Community Health & Wellness</h3><p><a class="btn btn-primary" href="#">Join a Class</a></p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <p class="sub">Have a question, want to partner, or need help? Reach out — we’re here.</p>
-        <form class="card" onsubmit="event.preventDefault(); alert('Thanks! This is a placeholder form.');" aria-label="Contact form">
-          <div class="two">
-            <p><label for="name">Name</label><br><input id="name" name="name" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #cfe0e7"></p>
-            <p><label for="email">Email</label><br><input id="email" type="email" name="email" required style="width:100%;padding:10px;border-radius:10px;border:1px solid #cfe0e7"></p>
-          </div>
-          <p><label for="org">Organization (optional)</label><br><input id="org" name="org" style="width:100%;padding:10px;border-radius:10px;border:1px solid #cfe0e7"></p>
-          <p><label for="msg">How can we help?</label><br><textarea id="msg" name="message" rows="5" style="width:100%;padding:10px;border-radius:10px;border:1px solid #cfe0e7"></textarea></p>
-          <p><button class="btn btn-primary" type="submit">Send</button></p>
-        </form>
-      </div>
-    </section>
+    </div>
   </main>
 
   <footer>
-    <div class="container">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-        <small>© <span id="yr"></span> Bolstering Health • North Carolina</small>
-        <small>Nonprofit • Accessibility • Privacy</small>
-      </div>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+      <small>© <span id="yr"></span> Bolstering Health • North Carolina</small>
+      <small>Nonprofit • Accessibility • Privacy</small>
     </div>
   </footer>
 
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
-    const menuBtn = document.getElementById('menuBtn');
-    const navlinks = document.getElementById('navlinks');
-    if(menuBtn && navlinks){
-      menuBtn.addEventListener('click', () => {
-        const open = navlinks.style.display === 'flex';
-        navlinks.style.display = open ? 'none' : 'flex';
-        navlinks.style.flexDirection = 'column';
-        navlinks.style.gap = '8px';
-        menuBtn.setAttribute('aria-expanded', String(!open));
-      });
-    }
   </script>
 </body>
 </html>
